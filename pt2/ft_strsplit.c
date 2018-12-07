@@ -6,11 +6,13 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 20:36:19 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/07 21:54:21 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/07 22:31:20 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int static	ft_skip(char const *s, char c)
+#include <stdlib.h>
+
+static int			ft_skip(char const *s, char c)
 {
 	int		i;
 
@@ -20,14 +22,14 @@ int static	ft_skip(char const *s, char c)
 	return (i);
 }
 
-char const static	*ft_word(char const *s, char c)
+static char const	*ft_word(char const *s, char c)
 {
 	while (*s != c && *s != 0)
 		s++;
 	return (s);
 }
 
-int static	ft_count(char const *s, char c)
+static int			ft_count(char const *s, char c)
 {
 	int		i;
 
@@ -45,7 +47,7 @@ int static	ft_count(char const *s, char c)
 	return (i);
 }
 
-int static	ft_wlen(char const *s, char c)
+static int			ft_wlen(char const *s, char c)
 {
 	int		i;
 
@@ -55,7 +57,7 @@ int static	ft_wlen(char const *s, char c)
 	return (i);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	char	**ss;
 	int		i;
@@ -81,10 +83,12 @@ char		**ft_strsplit(char const *s, char c)
 				s = ft_word(s, c);
 				s += ft_skip(s, c);
 			}
-			else return (0);
+			else
+				return (0);
 			j++;
 		}
 	}
-	else return (0);
+	else
+		return (0);
 	return (ss);
 }

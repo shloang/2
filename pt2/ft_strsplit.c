@@ -6,7 +6,7 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 20:36:19 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/07 22:31:20 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/10 17:57:45 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ static int			ft_skip(char const *s, char c)
 	return (i);
 }
 
-static char const	*ft_word(char const *s, char c)
-{
-	while (*s != c && *s != 0)
-		s++;
-	return (s);
-}
-
 static int			ft_count(char const *s, char c)
 {
 	int		i;
@@ -41,7 +34,8 @@ static int			ft_count(char const *s, char c)
 		if (*s != 0)
 		{
 			i++;
-			s = ft_word(s, c);
+			while (*s != c && *s != 0)
+				s++;
 		}
 	}
 	return (i);
@@ -57,14 +51,27 @@ static int			ft_wlen(char const *s, char c)
 	return (i);
 }
 
+static void			ft_fill(char **ss, int j, char const **s, char c)
+{
+	int		k;
+
+	k = 0;
+	*s += ft_skip(*s, c);
+	while (k < ft_wlen(*s, c))
+	{
+		ss[j][k] = *(*s + k);
+		k++;
+	}
+	while (**s != c && **s != 0)
+		(*s)++;
+}
+
 char				**ft_strsplit(char const *s, char c)
 {
 	char	**ss;
 	int		i;
 	int		j;
-	int		k;
 
-	s += ft_skip(s, c);
 	i = ft_count(s, c);
 	j = 0;
 	if ((ss = (char**)malloc(i + 1)))
@@ -73,16 +80,7 @@ char				**ft_strsplit(char const *s, char c)
 		while (j < i)
 		{
 			if ((ss[j] = (char*)malloc(ft_wlen(s, c) + 1)))
-			{
-				k = 0;
-				while (k < ft_wlen(s, c))
-				{
-					ss[j][k] = *(s + k);
-					k++;
-				}
-				s = ft_word(s, c);
-				s += ft_skip(s, c);
-			}
+				ft_fill(ss, j, &s, c);
 			else
 				return (0);
 			j++;

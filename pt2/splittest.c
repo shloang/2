@@ -10,6 +10,7 @@ int main(void)
 			printf("%c", **s);
 			(*s)++;
 		}
+		printf("*");
 		s++;
 	}
 }

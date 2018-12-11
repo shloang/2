@@ -6,11 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 22:18:32 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 22:18:44 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 00:48:02 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

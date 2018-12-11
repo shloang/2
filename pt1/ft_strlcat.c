@@ -6,11 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 16:41:45 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:50:45 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 00:52:21 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

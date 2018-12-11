@@ -6,11 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 22:19:02 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 22:30:43 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 00:48:55 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/08/26 13:56:15 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/12 00:02:20 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_atoi(const char *str)
 {
+	long long	num;
 	int			i;
-	const char	*t1;
-	const char	*t2;
 
 	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	num = 0;
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
+		str++;
+	while (*str == '0')
+		str++;
+	if (*str == 0)
+		return (0);
+	if (*str == '-' || *str == '+')
+		i++;
+	while (*(str + i) >= '0' && *(str + i) <= '9')
 	{
-		t1++;
-		t2++;
+		num = (num * 10) + (*(str + i) - '0');
+		i++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	if (*(str) == '-')
+		num = -num;
+	return (num);
 }

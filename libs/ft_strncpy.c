@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/08/27 19:02:55 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/11 23:38:51 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	int			i;
-	const char	*t1;
-	const char	*t2;
+	size_t	i;
 
 	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	while (src[i] && i < n)
 	{
-		t1++;
-		t2++;
+		dest[i] = src[i];
+		i++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	return (dest);
 }

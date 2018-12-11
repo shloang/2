@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/11/25 14:26:22 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/11 23:55:20 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strrchr(const char *str, int to_find)
 {
-	int			i;
-	const char	*t1;
-	const char	*t2;
+	int		*a;
 
-	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	a = str;
+	while (*(str))
 	{
-		t1++;
-		t2++;
+		if (*str == to_find)
+			a = str;
+		str++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	if (a != to_find)
+		return (0);
+	return (a);
 }

@@ -1,31 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/11/19 19:29:45 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/11 23:34:09 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+static size_t	ft_strlen(const char *str)
 {
-	int			i;
-	const char	*t1;
-	const char	*t2;
+	size_t	a;
+
+	a = 0;
+	while (*str != 0)
+	{
+		a++;
+		str++;
+	}
+	return (a);
+}
+
+static char		*ft_strcpy(char *a, const char *b)
+{
+	int		i;
 
 	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	while (*b != 0)
 	{
-		t1++;
-		t2++;
+		*a = *b;
+		a++;
+		b++;
+		i++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	*a = 0;
+	a -= i;
+	return (a);
+}
+
+char			*ft_strdup(const char *src)
+{
+	char *str;
+
+	str = (char *)malloc(sizeof(str) * (ft_strlen(src) + 1));
+	ft_strcpy(str, src);
+	return (str);
 }

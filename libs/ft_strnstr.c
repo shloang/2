@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/11/25 15:14:24 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/11 23:58:50 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int			i;
-	const char	*t1;
-	const char	*t2;
+	size_t	hp;
+	size_t	np;
 
-	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	hp = 0;
+	np = 0;
+	if (*to_find == 0)
+		return (str);
+	while (*(str + hp))
 	{
-		t1++;
-		t2++;
+		np = 0;
+		while (*(str + hp + np) == *(to_find + np))
+		{
+			np++;
+			if (*(to_find + np) == 0)
+				return (str + hp);
+		}
+		hp++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	return (0);
 }

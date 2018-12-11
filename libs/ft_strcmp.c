@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 22:28:53 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/11 23:10:13 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/11/19 18:48:27 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/12 00:00:20 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	int			i;
-	const char	*t1;
-	const char	*t2;
+	int		v;
 
-	i = 0;
-	t1 = s1;
-	t2 = s2;
-	while (n > 0 && *t1 != 0 && *t2 != 0 && *t1 == *t2)
+	v = 0;
+	while (*s1 == *s2 && *s1 != 0 && *s2 != 0)
 	{
-		t1++;
-		t2++;
+		s1++;
+		s2++;
 	}
-	i = *t1 - *t2;
-	return (i);
+	return (*s1 - *s2);
 }

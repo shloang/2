@@ -6,7 +6,7 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 00:10:40 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/12 01:03:43 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 05:40:43 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 /* ***** Part 1 - Libc functions ***** */
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
-// // int          ft_isalnum(int c);
-// // int          ft_isalpha(int c);
-// // int          ft_isascii(int c);
-// // int          ft_isdigit(int c);
-// // int          ft_isprint(int c);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *one, const void *two, size_t n);

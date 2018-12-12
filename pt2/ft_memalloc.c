@@ -6,9 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:44:27 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 19:56:03 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 06:39:33 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 void	*ft_memalloc(size_t size)
 {
@@ -16,7 +18,7 @@ void	*ft_memalloc(size_t size)
 	size_t	i;
 
 	i = 0;
-	if (c = malloc(size))
+	if ((c = malloc(size)))
 	{
 		while (i < size)
 		{

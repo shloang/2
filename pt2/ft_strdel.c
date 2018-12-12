@@ -6,15 +6,17 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 20:25:20 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 20:30:52 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 07:09:13 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
+
 void	ft_strdel(char **as)
 {
-	while (**as != 0)
+	if (as)
 	{
-		free(**as);
+		free(*as);
 		*as = 0;
 	}
 }

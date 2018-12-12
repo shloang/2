@@ -6,13 +6,15 @@
 #    By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/12 00:26:56 by dalys-fr          #+#    #+#              #
-#    Updated: 2018/12/12 01:21:53 by dalys-fr         ###   ########.fr        #
+#    Updated: 2018/12/12 05:53:42 by dalys-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_*.c
+SRC1 = ./pt1/ft_*.c
+
+SRC2 = ./pt2/ft_*.c
 
 OUT = ft_*.o
 
@@ -21,7 +23,7 @@ INC = libft.h
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRCS) -I $(INC)
+	gcc -Wall -Wextra -Werror -c $(SRC1) $(SRC2) -I $(INC)
 	ar rc $(NAME) $(OUT)
 
 clean:

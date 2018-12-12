@@ -6,21 +6,24 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 20:01:54 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 20:24:50 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 06:51:41 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 char	*ft_strnew(size_t size)
 {
 	char	*c;
 
-	if (c = (char *)malloc(size + 1))
+	if ((c = (char *)malloc(size + 1)))
 	{
-		while (size >= 0)
+		while (size > 0)
 		{
 			*(c + size) = 0;
 			size--;
 		}
+		*(c + size) = 0;
 		return (c);
 	}
 	return (0);

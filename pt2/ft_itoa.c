@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 19:29:45 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/12 03:13:27 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/12/04 20:52:18 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/12 06:28:23 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char			*ft_strdup(const char *src)
+char	*ft_itoa(int n)
 {
-	char	*str;
+	char	*s;
 	int		i;
+	int		num;
 
-	i = ft_strlen(src);
-	if ((str = (char *)malloc(sizeof(char) * (i + 1))))
+	num = n;
+	(num < 0) ? (i = 1) : (i = 0);
+	num *= i * (-1);
+	while (num > 0)
 	{
-		*(str + i) = 0;
-		ft_strcpy(str, src);
-		return (str);
+		num /= 10;
+		i++;
 	}
-	return (0);
+	s = (char *)malloc(i + 1);
+	s[i] = 0;
+	i--;
+	while (i >= 0 && n > 0)
+	{
+		s[i--] = n % 10;
+		n /= 10;
+	}
+	if (i == 0)
+		s[i] = '-';
+	return (s);
 }

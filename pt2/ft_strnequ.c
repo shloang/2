@@ -6,19 +6,24 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 21:39:37 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 22:12:45 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 07:18:08 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
+
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	while (*s1 != 0 && *s2 != 0 && *s1 == *s2 && n > 0)
+	if (s1 && s2)
 	{
-		s1++;
-		s2++;
-		n--;
+		while (*s1 != 0 && *s2 != 0 && *s1 == *s2 && n > 0)
+		{
+			s1++;
+			s2++;
+			n--;
+		}
+		if (*s1 == *s2)
+			return (1);
 	}
-	if (*s1 == *s2)
-		return (1);
 	return (0);
 }

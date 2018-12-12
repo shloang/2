@@ -6,9 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 19:59:51 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/04 20:19:45 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 07:17:51 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,18 +20,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	l1 = 0;
 	l2 = 0;
-	while (*(s1 + l1) != 0)
-		l1++;
-	while (*(s2 + l2) != 0)
-		l2++;
-	if ((s = (char *)malloc(l1 + l2 + 1)))
+	if (s1 && s2)
 	{
-		*(s + l1 + l2) = 0;
-		while (--l2 >= 0)
-			*(s + l1 + l2) = *(s2 + l2);
-		while (--l1 >= 0)
-			*(s + l1) = *(s1 + l1);
-		return (s);
+		while (*(s1 + l1) != 0)
+			l1++;
+		while (*(s2 + l2) != 0)
+			l2++;
+		if ((s = (char *)malloc(l1 + l2 + 1)))
+		{
+			*(s + l1 + l2) = 0;
+			while (--l2 >= 0)
+				*(s + l1 + l2) = *(s2 + l2);
+			while (--l1 >= 0)
+				*(s + l1) = *(s1 + l1);
+			return (s);
+		}
 	}
 	return (0);
 }

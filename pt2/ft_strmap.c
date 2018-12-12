@@ -6,9 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 20:47:37 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/11/30 21:32:00 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 07:13:53 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
@@ -16,18 +18,21 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		n;
 
 	n = 0;
-	while (*(s + n) != 0)
-		n++;
-	if (t = (char *)(malloc(n + 1)))
+	if (s)
 	{
-		*(t + n) = 0;
-		n--;
-		while (n >= 0)
+		while (*(s + n) != 0)
+			n++;
+		if ((t = (char *)(malloc(n + 1))))
 		{
-			*(t + n) = f(*(s + n));
+			*(t + n) = 0;
 			n--;
+			while (n >= 0)
+			{
+				*(t + n) = f(*(s + n));
+				n--;
+			}
+			return (t);
 		}
-		return (t);
 	}
 	return (0);
 }

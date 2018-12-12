@@ -6,7 +6,7 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 14:26:22 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/12 03:41:37 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/12 06:11:02 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int to_find)
 
 	a = str;
 	if (to_find == 0)
-	{	
+	{
 		while (*str)
 			str++;
 		return (char *)(str);

@@ -6,20 +6,27 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 20:52:18 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/12 06:28:23 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/23 22:50:10 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_sign_itoa(int num)
+{
+	if (num < 0)
+		return (1);
+	return (0);
+}
+
+char		*ft_itoa(int n)
 {
 	char	*s;
 	int		i;
 	int		num;
 
 	num = n;
-	(num < 0) ? (i = 1) : (i = 0);
+	i = ft_sign_itoa(num);
 	num *= i * (-1);
 	while (num > 0)
 	{

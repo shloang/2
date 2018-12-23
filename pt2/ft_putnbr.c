@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/23 22:40:06 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/23 22:51:31 by dalys-fr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.a"
 
-static int	ft_checkint(int n)
+static int			ft_checkint(int n)
 {
 	if (n == -2147483648)
 	{
@@ -14,6 +26,7 @@ static int	ft_checkint(int n)
 	}
 	return (n);
 }
+
 void				ft_putnbr(int n)
 {
 	int	a;

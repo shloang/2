@@ -6,11 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 22:40:06 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/23 22:51:31 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/23 22:57:29 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.a"
+#include "../libft.h"
 
 static int			ft_checkint(int n)
 {

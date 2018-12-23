@@ -6,11 +6,11 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 22:40:55 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/23 22:40:56 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/23 22:58:13 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.a"
+#include "../libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

@@ -45,33 +45,33 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *str, int to_find);
 char	*ft_strstr(const char *s1, const char *s2);
-// // int          ft_toupper(int c);
-// // int          ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 // /* ***** Part 2 - Libc functions ***** */
-// //ft_memalloc
-// //ft_memdel
-// //ft_strnew
-// //ft_strdel
-// //ft_strclr
-// //ft_striter
-// //ft_striteri
-// //ft_strmap
-// //ft_strmapi
-// //ft_strequ
-// //ft_strnequ
-// //ft_strsub
-// //ft_strjoin
-// //ft_strtrim
-// //ft_strsplit
-// //ft_itoa
-// //ft_putchar
-// //ft_putstr
-// //ft_putendl
-// //ft_putnbr;
-// //ft_putchar_fd
-// //ft_putstr_fd
-// //ft_putendl_fd
-// //ft_putnbr_fd
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s)
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 // /* ***** Part 3 - Bonus part ***** */
 // //ft_lstnew
 // //ft_lstdelone

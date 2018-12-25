@@ -6,7 +6,7 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 22:39:31 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/23 22:57:01 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/24 23:34:43 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_putendl(char const *s)
 {
-	while (*s)
+	if (s)
 	{
-		ft_putchar(*s);
-		s++;
+		while (*s)
+		{
+			ft_putchar(*s);
+			s++;
+		}
+	ft_putchar('\n');
 	}
-	ft_putchar_fd('\n');
 }

@@ -5,43 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 20:52:18 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/23 22:50:10 by dalys-fr         ###   ########.fr       */
+/*   Created: 2018/12/25 02:33:21 by dalys-fr          #+#    #+#             */
+/*   Updated: 2018/12/25 03:37:43 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int	ft_sign_itoa(int num)
+static int		ft_getlen(int n)
 {
-	if (num < 0)
-		return (1);
-	return (0);
-}
-
-char		*ft_itoa(int n)
-{
-	char	*s;
 	int		i;
-	int		num;
 
-	num = n;
-	i = ft_sign_itoa(num);
-	num *= i * (-1);
-	while (num > 0)
+	i = n ? 0 : 1;
+	while (n)
 	{
-		num /= 10;
+		n /= 10;
 		i++;
 	}
-	s = (char *)malloc(i + 1);
-	s[i] = 0;
-	i--;
-	while (i >= 0 && n > 0)
+	return (i);
+}
+
+char			*ft_itoa(int n)
+{
+	int			i;
+	int			sig;
+	char		*s;
+
+	i = ft_getlen(n);
+	sig = (n < 0) ? -1 : 1;
+	i = (n < 0) ? i + 1 : i;
+	if ((s = (char *)malloc(i + 1)))
 	{
-		s[i--] = n % 10;
-		n /= 10;
+		s[i--] = 0;
+		if (!n)
+			s[i--] = '0';
+		while (n)
+		{
+			s[i--] = sig * (n % 10) + '0';
+			n /= 10;
+		}
+		if (!i)
+			s[i] = '-';
+		return (s);
 	}
-	if (i == 0)
-		s[i] = '-';
-	return (s);
+	return (0);
 }

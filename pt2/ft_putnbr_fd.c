@@ -6,7 +6,7 @@
 /*   By: dalys-fr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 22:40:19 by dalys-fr          #+#    #+#             */
-/*   Updated: 2018/12/23 22:57:39 by dalys-fr         ###   ########.fr       */
+/*   Updated: 2018/12/25 00:44:49 by dalys-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static int			ft_checkint(int n, int fd)
 
 void				ft_putnbr_fd(int n, int fd)
 {
-	int	a;
-	int	t;
+	int			a;
+	long long	t;
 
 	n = ft_checkint(n, fd);
 	a = n;
